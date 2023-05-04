@@ -16,7 +16,8 @@ from flask import Flask, jsonify
 #################################################
 
 # reflect an existing database into a new model
-engine = create_engine("sqlite:///hawaii.sqlite")
+database_path = 'SurfsUp/hawaii.sqlite'
+engine = create_engine(f"sqlite:///{database_path}")
 
 
 # reflect the tables
@@ -49,8 +50,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end>"
+        f"/api/v1.0/start<br/>"
+        f"/api/v1.0/start/end<br/>"
     )
 
 
